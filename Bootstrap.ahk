@@ -1,14 +1,12 @@
 #SingleInstance, force
 #NoEnv
+#Persistent
+#Include, Global.ahk
 #Include, Utility.ahk
 
 Trace("Starting Bootstrap.ahk")
 
-threadsToStart := Object()
-threadsToStart.Insert("new.ahk")
-threadsToStart.Insert("new2.ahk")
-
-for index, value in threadsToStart
+for index, value in Services
 {
     Trace("Starting " . value)
     Run, %value%
@@ -21,7 +19,7 @@ OnExit, ExitSub
 return
 
 ExitSub:
-for index, value in threadsToStart
+for index, value in Services
 {
     Trace("Closing " . value)
     if WinExist(value)
@@ -30,3 +28,4 @@ for index, value in threadsToStart
         WinKill, %value%
     }
 }
+ExitApp
