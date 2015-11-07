@@ -2,7 +2,7 @@
 #NoEnv
 #Include, Utility.ahk
 
-SetWorkingDir,%A_ScriptDir%
+Trace("Starting Bootstrap.ahk")
 
 threadsToStart := Object()
 threadsToStart.Insert("new.ahk")
@@ -14,6 +14,9 @@ for index, value in threadsToStart
     Run, %value%
 }
 
+DetectHiddenWindows, On
+SetTitleMatchMode, 2
+
 OnExit, ExitSub
 return
 
@@ -21,9 +24,9 @@ ExitSub:
 for index, value in threadsToStart
 {
     Trace("Closing " . value)
-    if (Process, Exist, value)
+    if WinExist(value)
     {
-        Trace("NeedToClose " . value)
-        Process, Close, %value%
+        Trace("Need to close " . value)
+        WinKill, %value%
     }
 }

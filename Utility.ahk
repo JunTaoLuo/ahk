@@ -1,13 +1,14 @@
 #SingleInstance, force
 #NoEnv
+#Include, Global.ahk
 
-SetWorkingDir,%A_ScriptDir%
-
-LogFile := "Debug.log"
+Trace("Starting Utility.ahk")	
 
 Trace(message)
 {
+	global Debug
 	global LogFile
-	MsgBox, %message%`n
+	if Debug
+		MsgBox, %message%`n
 	FileAppend, %message%`n, %LogFile%
 }
