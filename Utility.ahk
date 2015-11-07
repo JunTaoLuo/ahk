@@ -2,8 +2,6 @@
 #NoEnv
 #Include, Global.ahk
 
-Trace("Starting Utility.ahk")	
-
 Trace(message)
 {
 	global Debug

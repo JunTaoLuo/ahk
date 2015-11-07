@@ -8,7 +8,7 @@ Trace("Starting Bootstrap.ahk")
 
 for index, value in Services
 {
-    Trace("Starting " . value)
+    Trace("Lauching " . value)
     Run, %value%
 }
 

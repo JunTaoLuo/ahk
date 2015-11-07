@@ -1,5 +1,8 @@
 #SingleInstance force
 #NoEnv
+#Include, Utility.ahk
+
+Trace("Starting MainBindings.ahk")
 
 ;----------;
 ; comments ;
@@ -81,7 +84,7 @@ TabCtrl:
     Send ^{Tab}
 return
 
-
+/*
 ; Modifier Modes
 
 ; Mapping keys 
@@ -108,7 +111,7 @@ return
 >!l:: MouseMove, -25, 0, 0, R ; left
 >!`;:: MouseMove, 0, 25, 0, R ; down
 >!':: MouseMove, 25, 0, 0, R ; right
-
+*/
 ; Mapping clicks
 /*
 >!k::
