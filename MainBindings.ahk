@@ -4,9 +4,6 @@
 
 Trace("Starting MainBindings.ahk")
 
-;----------;
-; comments ;
-;----------;
 ; Swap LCtrl and LAlt
 
 *LCtrl:: ; NEEDS '*' because LCtrl key-repeat is otherwise interpreted as ALT+LCtrl.
